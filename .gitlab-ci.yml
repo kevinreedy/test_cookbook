@@ -9,4 +9,4 @@ before_script:
 test:
   script:
     - cookstyle
-    - foodcritic --epic-fail any .
+    - foodcritic --exclude test --epic-fail any .
