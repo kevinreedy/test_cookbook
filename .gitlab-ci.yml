@@ -10,3 +10,4 @@ test:
   script:
     - cookstyle
     - foodcritic --exclude test --epic-fail any .
+    - kitchen test
