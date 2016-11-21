@@ -3,6 +3,9 @@ image: "chef/chefdk:1.0.3"
 # TODO
 # cache:
 
+services:
+  - docker:dind
+
 before_script:
   - chef --version
 
