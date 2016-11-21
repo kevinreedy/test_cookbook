@@ -1,15 +1,10 @@
 name 'test_cookbook'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Kevin Reedy'
+maintainer_email 'kevinreedy@gmail.com'
 license 'all_rights'
 description 'Installs/Configures test_cookbook'
 long_description 'Installs/Configures test_cookbook'
-version '0.1.0'
+version '0.1.1'
 
-# If you upload to Supermarket you should set this so your cookbook
-# gets a `View Issues` link
-# issues_url 'https://github.com/<insert_org_here>/test_cookbook/issues' if respond_to?(:issues_url)
-
-# If you upload to Supermarket you should set this so your cookbook
-# gets a `View Source` link
-# source_url 'https://github.com/<insert_org_here>/test_cookbook' if respond_to?(:source_url)
+issues_url 'https://git.dayold.pizza/kreedy/test_cookbook/issues' if respond_to?(:issues_url)
+source_url 'https://git.dayold.pizza/kreedy/test_cookbook' if respond_to?(:source_url)
