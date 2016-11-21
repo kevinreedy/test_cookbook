@@ -1,0 +1,12 @@
+image: "chef/chefdk:1.0.3"
+
+# TODO
+# cache:
+
+before_script:
+  - chef --version
+
+test:
+  script:
+    - cookstyle
+    - foodcritic --epic-fail any .
