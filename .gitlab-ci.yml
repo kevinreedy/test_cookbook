@@ -23,16 +23,14 @@ unit:
 .integration: &tk
   stage: integration
   before_script:
+    - env
+    - chef --version
     - apt-get update && apt-get -y install rsync
   script:
-    - kitchen test
+    - kitchen test $CI_BUILD_NAME
 
-integration_ubuntu_1604:
+"ubuntu-1604":
   <<: *tk
-  script:
-    - kitchen test ubuntu-1604
 
-integration_centos_7:
+"centos_7":
   <<: *tk
-  script:
-    - kitchen test ubuntu-1604
