@@ -26,10 +26,11 @@ unit:
     - env
     - chef --version
     - apt-get update && apt-get -y install rsync
+  # TODO: script might run verify against an existing container if it matches; after_script might also be destroying other projects' containers if they are running in parallel
   script:
     - kitchen verify $CI_BUILD_NAME
   after_script:
-    - kitchen destroy $CI_BUILD_NAME # TODO: this is destroying other projects' containers if they are running in parallel
+    - kitchen destroy $CI_BUILD_NAME
 
 "centos-5":
   <<: *tk
