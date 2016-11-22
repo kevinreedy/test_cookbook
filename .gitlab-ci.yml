@@ -18,7 +18,7 @@ lint:
 unit:
   stage: unit
   script:
-    - echo rspec
+    - rspec
 
 .integration: &tk
   stage: integration
