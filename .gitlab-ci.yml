@@ -1,19 +1,38 @@
 image: "kevinreedy/docker-chefdk:dokken-fix-20161121"
 
 before_script:
-  - apt-get update && apt-get -y install rsync
-  - chef --version
   - env
+  - chef --version
+
+stages:
+  - lint
+  - unit
+  - integration
 
 lint:
+  stage: lint
   script:
     - cookstyle
     - foodcritic --exclude test --epic-fail any .
 
 unit:
+  stage: unit
   script:
     - rspec
 
-integration:
+.integration: &tk
+  stage: integration
+  before_script:
+    - apt-get update && apt-get -y install rsync
   script:
     - kitchen test
+
+integration_ubuntu_1604:
+  <<: *tk
+  script:
+    - kitchen test ubuntu-1604
+
+integration_centos_7:
+  <<: *tk
+  script:
+    - kitchen test ubuntu-1604
