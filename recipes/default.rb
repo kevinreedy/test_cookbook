@@ -7,3 +7,5 @@
 file '/tmp/hello.txt' do
   content 'Hello, GitLab!'
 end
+
+IAmAnIntentionalError

@@ -28,6 +28,8 @@ unit:
     - apt-get update && apt-get -y install rsync
   script:
     - kitchen verify $CI_BUILD_NAME
+  after_script:
+    - kitchen destroy $CI_BUILD_NAME
 
 "ubuntu-1604":
   <<: *tk
