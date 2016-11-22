@@ -1,4 +1,4 @@
-image: "kevinreedy/chefdk-debug:0.0.2"
+image: "kevinreedy/chefdk-debug:0.0.3"
 
 # TODO
 # cache:
