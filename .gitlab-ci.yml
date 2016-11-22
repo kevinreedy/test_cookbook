@@ -27,7 +27,7 @@ unit:
     - chef --version
     - apt-get update && apt-get -y install rsync
   script:
-    - kitchen test $CI_BUILD_NAME
+    - kitchen verify $CI_BUILD_NAME
 
 "ubuntu-1604":
   <<: *tk
