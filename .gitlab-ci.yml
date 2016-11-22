@@ -29,7 +29,7 @@ unit:
   script:
     - kitchen verify $CI_BUILD_NAME
   after_script:
-    - kitchen destroy $CI_BUILD_NAME
+    - kitchen destroy $CI_BUILD_NAME # TODO: this is destroying other projects' containers if they are running in parallel
 
 "ubuntu-1604":
   <<: *tk
