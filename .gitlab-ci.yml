@@ -31,8 +31,27 @@ unit:
   after_script:
     - kitchen destroy $CI_BUILD_NAME # TODO: this is destroying other projects' containers if they are running in parallel
 
-"ubuntu-1604":
+centos_5:
   <<: *tk
 
-"centos-7":
+centos_6:
   <<: *tk
+
+centos_7:
+  <<: *tk
+
+debian_7:
+  <<: *tk
+
+debian_8:
+  <<: *tk
+
+ubuntu_1204:
+  <<: *tk
+
+ubuntu_1404:
+  <<: *tk
+
+ubuntu_1604:
+  <<: *tk
+
