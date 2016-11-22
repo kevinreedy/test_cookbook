@@ -3,9 +3,17 @@ image: "kevinreedy/docker-chefdk:dokken-fix-20161121"
 before_script:
   - apt-get update && apt-get -y install rsync
   - chef --version
+  - env
 
-test:
+lint:
   script:
     - cookstyle
     - foodcritic --exclude test --epic-fail any .
+
+unit:
+  script:
+    - rspec
+
+integration:
+  script:
     - kitchen test
