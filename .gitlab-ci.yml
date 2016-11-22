@@ -1,10 +1,4 @@
-image: "kevinreedy/chefdk-debug:0.0.5"
-
-# TODO
-# cache:
-
-services:
-  - docker:dind
+image: "kevinreedy/docker-chefdk:dokken-fix-20161121"
 
 before_script:
   - apt-get update && apt-get -y install rsync
