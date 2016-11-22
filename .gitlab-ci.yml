@@ -32,5 +32,5 @@ unit:
 "ubuntu-1604":
   <<: *tk
 
-"centos_7":
+"centos-7":
   <<: *tk
