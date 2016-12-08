@@ -1,4 +1,4 @@
-image: "kevinreedy/docker-chefdk:dokken-fix-20161122"
+image: "kevinreedy/docker-chefdk:dokken-fix-20161121"
 
 before_script:
   - env
