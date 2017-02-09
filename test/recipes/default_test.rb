@@ -7,5 +7,5 @@
 
 describe file '/tmp/hello.txt' do
   it { should be_file }
-  its('content') { should eq 'Hello, GitLab!' }
+  its('content') { should eq 'Hello, World!' }
 end
