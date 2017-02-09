@@ -1,4 +1,4 @@
-image: "kevinreedy/docker-chefdk:1.1.13"
+image: "chef/chefdk:1.2.20"
 
 before_script:
   - env
@@ -26,7 +26,6 @@ unit:
     - env
     - chef --version
     - apt-get update && apt-get -y install rsync
-  # TODO: script might run verify against an existing container if it matches; after_script might also be destroying other projects' containers if they are running in parallel
   script:
     - kitchen verify $CI_BUILD_NAME
   after_script:
