@@ -4,7 +4,7 @@ maintainer_email 'kevinreedy@gmail.com'
 license 'Apache-2.0'
 description 'Installs/Configures test_cookbook'
 long_description 'Installs/Configures test_cookbook'
-version '0.2.1'
+version '0.2.2'
 
 chef_version '>= 14.0' if respond_to?(:chef_version)
 
