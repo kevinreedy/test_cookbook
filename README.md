@@ -1,4 +1,5 @@
 # test_cookbook
 
-TODO: Enter the cookbook description here.
+This cookbook writes out a single file and tests that its content is correct.
 
+I use this to test various CI/CD tools with Chef Cookbooks.
