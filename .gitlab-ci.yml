@@ -1,1 +1,2 @@
-include: 'https://git.dayold.pizza/kevinreedy/pipeline-templates/raw/master/cookbook.yml'
+---
+include: "https://git.dayold.pizza/kevinreedy/pipeline-templates/raw/master/cookbook.yml"
