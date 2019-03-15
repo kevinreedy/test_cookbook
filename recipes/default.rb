@@ -5,5 +5,5 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 file '/tmp/hello.txt' do
-  content 'Hello, Chef Automate 2!'
+  content 'Hello, Gitlab!'
 end
