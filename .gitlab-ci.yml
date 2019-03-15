@@ -1,2 +1,63 @@
 ---
-include: "https://gitlab.com/kevinreedy/pipeline-templates/raw/master/cookbook.yml"
+image: "chef/chefdk:3.8.14"
+
+before_script:
+  - env
+  - chef --version
+
+stages:
+  - verify
+  - unit
+  - integration
+  - publish
+
+syntax:
+  stage: verify
+  script:
+    - knife cookbook test -o . -a
+
+cookstyle:
+  stage: verify
+  script:
+    - cookstyle
+
+foodcritic:
+  stage: verify
+  script:
+    - foodcritic --exclude test --epic-fail any .
+
+unit:
+  stage: unit
+  script:
+    - rspec --format documentation --color
+
+# TODO: Make supermarket publish work, and probably optional
+# supermarket:
+#   stage: publish
+#   only:
+#     - master
+#   script:
+#     - echo "upload to supermarket"
+
+# TODO: provide helper for multiple Chef Servers
+# chef_server:
+#   stage: publish
+#   only:
+#     - master
+#   script:
+#     - berks install
+#     - berks upload
+
+default-ubuntu-1604:
+  stage: integration
+  script:
+    - kitchen verify $CI_BUILD_NAME
+  after_script:
+    - kitchen destroy $CI_BUILD_NAME
+
+default-centos-7:
+  stage: integration
+  script:
+    - kitchen verify $CI_BUILD_NAME
+  after_script:
+    - kitchen destroy $CI_BUILD_NAME
